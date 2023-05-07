@@ -1,5 +1,20 @@
 <ul>
     <li *ngFor ="let store of stores">
-        <img src="{{stores}}" alt="">
+        <a href="">
+            <img src="{{store.imageUrl}}" alt="">
+            <div class="content">
+                <div class="name">
+                    {{store.name}}
+                </div>
+                <div>
+                    Rating: {{store.stars}} ⭐
+                </div>
+                <div class="price">
+                    <span>
+                        Average Price Range: {{store.price}} L.E.
+                    </span>
+                </div>
+            </div>
+        </a>
     </li>
 </ul>

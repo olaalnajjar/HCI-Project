@@ -1,0 +1,20 @@
+div{
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 10px;
+}
+
+input{
+    width: 100px;
+    margin: 10px;
+}
+
+select {
+    height:30px;
+    margin: 10px;
+}
+
+.cities input{
+    width: auto;
+    margin: 0px;
+}

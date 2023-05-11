@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { StoresService } from '../services/stores.service';
-import { store } from '../shared/Store';
+import { StoresService } from '../services/stores/stores.service';
+import { Store } from '../shared/Store';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,7 +8,7 @@ import { store } from '../shared/Store';
 })
 export class HomeComponent {
 
-  stores:store[] =[]
+  stores:Store[] =[]
   constructor(private StoreService:StoresService){}
 
   ngOnInit():void{

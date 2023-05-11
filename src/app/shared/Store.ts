@@ -1,4 +1,4 @@
-export class store{
+export class Store{
     id!:number;
     name!:string;
     price!:number;

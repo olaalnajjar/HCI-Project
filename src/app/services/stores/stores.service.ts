@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
-import { store } from '../shared/Store';
+import { Store } from 'src/app/shared/Store'; 
 @Injectable({
   providedIn: 'root'
 })
 export class StoresService {
 
   constructor() { }
-  getAll():store[]{
+  getStoreByID(id: number):Store{
+    return this.getAll().find(store => store.id == id)!;
+  }
+  getAll():Store[]{
     return [
       {
         id: 1,

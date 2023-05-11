@@ -1,6 +1,6 @@
 <ul>
     <li *ngFor ="let store of stores">
-        <a href="">
+        <a routerLink="/store/{{store.id}}">
             <img src="{{store.imageUrl}}" alt="">
             <div class="content">
                 <div class="name">

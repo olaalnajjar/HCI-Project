@@ -1,7 +1,9 @@
+import { Food } from "./Models/Food";
+
 export class Store{
     id!:number;
-    name!:string;
-    price!:number;
+    title!:string;
     stars:number = 0;
-    imageUrl!:string;
+    img_id!:string;
+    Tags?:String[];
 }

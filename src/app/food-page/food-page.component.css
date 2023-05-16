@@ -7,7 +7,7 @@ ul{
     padding: 0;
 }
 .food{
-    height: 22.5rem;
+    height: 35.5rem;
     width: 20rem;
     border: 1px solid whitesmoke;
     border-radius: 1rem;
@@ -17,7 +17,10 @@ ul{
     overflow: hidden;
     color: #e72929;
 }
-
+.Status{
+    height: 1.5rem;
+    width: 1.5rem;
+}
 .content{
     padding: .5rem 1rem;
     position: relative;

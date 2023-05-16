@@ -11,6 +11,15 @@ import { HomeComponent } from './home/home.component';
 import { StorePageComponent } from './store-page/store-page.component';
 import { FormsModule } from '@angular/forms';
 import { FoodPageComponent } from './food-page/food-page.component';
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { environment } from 'src/environments/environment';
+import{AngularFireModule} from '@angular/fire/compat'; 
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { StoresService } from './services/stores/stores.service';
+import { FoodService } from './services/food/food.service';
+import { CartService } from './services/cart/cart.service';
+import{HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -26,9 +35,40 @@ import { FoodPageComponent } from './food-page/food-page.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [StoresService,
+    FoodService,
+    CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+
+
+// // Import the functions you need from the SDKs you need
+// import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
+
+// // Your web app's Firebase configuration
+// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// const firebaseConfig = {
+//   apiKey: "AIzaSyCOn76SLic63lklxqvipD5H-FBZN6XrvH4",
+//   authDomain: "hci-project-e4f9b.firebaseapp.com",
+//   projectId: "hci-project-e4f9b",
+//   storageBucket: "hci-project-e4f9b.appspot.com",
+//   messagingSenderId: "144963466951",
+//   appId: "1:144963466951:web:fcc5d46b7d9ce9bd8730e2",
+//   measurementId: "G-QS23YC7WPE"
+// };
+
+// // Initialize Firebase
+// const app = initializeApp(firebaseConfig);
+// const analytics = getAnalytics(app);

@@ -2,20 +2,16 @@
 resetLinkText="Back To Homepage"></app-not-found> -->
 
 <div *ngIf="store" class="container">
-    <img [src]="store.imageUrl" [alt]="store.name" />
+    <img [src]="store.img_id" [alt]="store.title" />
 
     <div class="details">
         <div class="header">
             <span class="name">
-                {{store.name}}
+                {{store.title}}
             </span>
         </div>
         <div class="rating">
             Rating: {{store.stars}} ⭐
-        </div>
-
-        <div class="price">
-            <span>{{store.price}} L.E.</span>
         </div>
 
     </div>

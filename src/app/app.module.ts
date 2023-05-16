@@ -20,6 +20,8 @@ import { StoresService } from './services/stores/stores.service';
 import { FoodService } from './services/food/food.service';
 import { CartService } from './services/cart/cart.service';
 import{HttpClientModule} from '@angular/common/http'
+import { SliderComponent } from './slider/slider.component';
+import {NgImageSliderModule } from 'ng-image-slider';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import{HttpClientModule} from '@angular/common/http'
     CartPageComponent,
     HomeComponent,
     StorePageComponent,
-    FoodPageComponent
+    FoodPageComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,9 @@ import{HttpClientModule} from '@angular/common/http'
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    HttpClientModule
+    HttpClientModule,
+    NgImageSliderModule,
+
   ],
   providers: [StoresService,
     FoodService,

@@ -1,0 +1,63 @@
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FF9046;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    height: 80px;
+    padding: 0 20px;
+    color: #fff;
+}
+
+div {
+    align-content: baseline;
+}
+
+.logo {
+    display: flex;
+}
+
+.logo a{
+    font-family: 'Braah One', sans-serif;
+    color: #fff;
+    text-decoration: none;
+}
+
+h1{
+    font-family: 'Braah One', sans-serif;
+}
+
+.logo img {
+    height: 60px;
+    padding: 15px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a{
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    color: #ffffff;
+
+}
+
+nav ul li a:hover {
+    background-color: #FFBB38;
+}

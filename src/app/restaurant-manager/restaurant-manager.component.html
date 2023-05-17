@@ -3,15 +3,16 @@
     <h2>Menu Categories</h2>
     <input type="text" placeholder="Category Name" [(ngModel)]="addedCategory">
     <button type="submit" (click)="onAddCategory()">Add Category</button>
-    <ul>
-      <li><button>Category Item</button></li>
+    <ul *ngFor="let value of categories">
+      <li><a (click)="categoryClicked(value)">{{ value }}</a></li>
     </ul>
   
     <h2>Menu Items</h2>
     <input type="text" placeholder="Item Name" [(ngModel)]="addedItem">
     <button type="submit" (click)="onAddItem()">Add Item</button>
-    <ul>
-      <li>item name</li>
+    <label>to {{selectedCategory}}</label>
+    <ul *ngFor="let value of items">
+      <li>{{ value }}</li>
     </ul>
     
   </div>

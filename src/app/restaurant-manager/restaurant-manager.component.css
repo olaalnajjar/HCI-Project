@@ -7,13 +7,17 @@
     border-width: 1px;
     color: #333;
     margin: 5px;
-    padding: 5px;
     align-content: center;
 }
 .restaurant-manager{
-    margin: 20px;
-}
-div{
     margin-left: 40px;
     margin-right: 40px;
+    margin-top: 20px;
 }
+li a:hover{
+    border-width: 0px;
+    color: red;
+    margin-top: 0px;
+    text-decoration: underline;
+}
+

@@ -41,6 +41,8 @@ import { Food } from '../shared/Models/Food';
   addToCart(dish_name: string, Price:number, Image:string,Description:string,Status:string) {
       
       item:Food; 
+      console.log(Price);
+      
       const item = {dish_name:dish_name,Price:Price, Image:Image, Description:Description,Status:Status};
       this.cartService.addToCart(item);
       this.router.navigateByUrl('/cart-page');

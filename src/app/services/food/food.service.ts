@@ -19,7 +19,11 @@ export class FoodService {
   constructor(private http: HttpClient) {}
 
   getDishes(): Observable<any> {
-    const url = `${this.baseUrl}/Dished/${this.storeName}.json`;
+    console.log(this.storeName);
+    
+    const url = `${this.baseUrl}/Dishes/${this.storeName}.json`;
+    console.log( this.http.get<any>(url));
+    
     return this.http.get<any>(url);
   }
   setTittleName(title:string){

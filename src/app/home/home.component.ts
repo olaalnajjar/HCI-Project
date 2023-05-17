@@ -14,7 +14,7 @@ import { FoodService } from '../services/food/food.service';
 export class HomeComponent {
 public currentStoreId!:number;
   constructor(private StoreService:StoresService, private route: ActivatedRoute, private router: Router,private foodService: FoodService){}
-  stores!: any[];
+  stores!: Store[];
   
 
 
@@ -27,11 +27,12 @@ public currentStoreId!:number;
   
   filtered_stors!:Store[]
 
-
+  selectedTag: string = '';
 
 
   ngOnInit():void{
     this.getStores();
+    this.filterStores();
   }
 
 
@@ -43,17 +44,58 @@ public currentStoreId!:number;
   titleName(title:string){
     this.StoreService.setTittleName(title);
     this.foodService.setTittleName(title);
-  }
-
-
-  fliterChinese(){
-   
+    console.log(title);
     
+  }
+
+  filterStores(): void {
+    if (this.selectedTag) {
+      this.StoreService.getStoresByTag(this.selectedTag).subscribe(
+        stores => {
+          this.stores = stores;
+        },
+        error => {
+          console.log('Error:', error);
+        }
+      );
+    } else {
+      this.StoreService.getStores().subscribe(
+        stores => {
+          this.stores = stores;
+        },
+        error => {
+          console.log('Error:', error);
+        }
+      );
+    }
+  }
+
+  onTagChange(tag: string): void {
+    this.selectedTag = tag;
+    this.filterStores();
+  }
+
+  fliterAsian(){
+    this.onTagChange("Asian");
+  }
+  fliterCrepe(){
+    this.onTagChange("Crepe");
 
   }
-  fliterCrepe(){}
-  fliterOriental(){}
-  fliterChicken(){}
-  fliterBurger(){}
-  fliterPizza(){}
+  fliterOriental(){
+    this.onTagChange("Oriental");
+
+  }
+  fliterChicken(){
+    this.onTagChange("Fried Chicken");
+
+  }
+  fliterBurger(){
+    this.onTagChange("Burger");
+
+  }
+  fliterPizza(){
+    this.onTagChange("Pizza");
+
+  }
 }

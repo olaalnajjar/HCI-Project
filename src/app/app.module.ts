@@ -22,6 +22,7 @@ import { CartService } from './services/cart/cart.service';
 import{HttpClientModule} from '@angular/common/http'
 import { SliderComponent } from './slider/slider.component';
 import {NgImageSliderModule } from 'ng-image-slider';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {NgImageSliderModule } from 'ng-image-slider';
     HomeComponent,
     StorePageComponent,
     FoodPageComponent,
-    SliderComponent
+    SliderComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

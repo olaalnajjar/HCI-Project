@@ -5,6 +5,7 @@ import { ActivatedRoute,Router } from '@angular/router';
 import { SlideInterface } from '../slide.interface';
 import { Observable } from 'rxjs';
 import { FoodService } from '../services/food/food.service';
+import { CartService } from '../services/cart/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -13,20 +14,9 @@ import { FoodService } from '../services/food/food.service';
 })
 export class HomeComponent {
 public currentStoreId!:number;
-  constructor(private StoreService:StoresService, private route: ActivatedRoute, private router: Router,private foodService: FoodService){}
+  constructor(private StoreService:StoresService,private cartServ: CartService, private route: ActivatedRoute, private router: Router,private foodService: FoodService){}
   stores!: Store[];
   
-
-
-  slides: SlideInterface[] = [
-    { url: '/assets/Images/dominos-pizza5190.jpg', title: 'dominos' },
-    { url: '/assets/Images/mc.jpg', title: 'mcdonalds'},
-    { url:'/assets/Images/pizza hut.jpg', title: 'pizza hut' },
-    { url:'/assets/Images/starbucks.jpg', title: 'starbucks' }
-  ];
-  
-  filtered_stors!:Store[]
-
   selectedTag: string = '';
 
 
@@ -44,6 +34,8 @@ public currentStoreId!:number;
   titleName(title:string){
     this.StoreService.setTittleName(title);
     this.foodService.setTittleName(title);
+    this.cartServ.setTittleName(title);
+
     console.log(title);
     
   }

@@ -1,0 +1,7 @@
+<h1>Customer Orders</h1>
+<div *ngFor="let storeOrder of storeOrders">
+  <h2>{{ storeOrder.storeName }}</h2>
+  <ul>
+    <li *ngFor="let order of storeOrder.orders">{{ order }}</li>
+  </ul>
+</div>

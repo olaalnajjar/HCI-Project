@@ -23,6 +23,8 @@ import{HttpClientModule} from '@angular/common/http'
 import { SliderComponent } from './slider/slider.component';
 import {NgImageSliderModule } from 'ng-image-slider';
 import { UsersComponent } from './users/users.component';
+import { Manger1Component } from './manger1/manger1.component';
+import { OdersComponent } from './orders/oders.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +37,10 @@ import { UsersComponent } from './users/users.component';
     StorePageComponent,
     FoodPageComponent,
     SliderComponent,
-    UsersComponent
-  ],
+    UsersComponent,
+    Manger1Component,
+    OdersComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -50,7 +54,18 @@ import { UsersComponent } from './users/users.component';
   providers: [StoresService,
     FoodService,
     CartService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,
+    HeaderComponent,
+    RestaurantManagerComponent,
+    RestaurantManager2Component,
+    CartPageComponent,
+    HomeComponent,
+    StorePageComponent,
+    FoodPageComponent,
+    SliderComponent,
+    UsersComponent,
+    Manger1Component,
+    OdersComponent]
 })
 export class AppModule { }
 

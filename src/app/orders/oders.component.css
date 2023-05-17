@@ -1,0 +1,17 @@
+h1{
+    margin-left: 2%;
+    color: #F4721C;
+    text-transform: uppercase;
+    font-weight:bolder;
+}
+h2{
+    margin-left: 2%;
+    color: #F4721C;
+    text-transform: uppercase;
+    font-weight:bolder;
+}
+li {
+    position: relative;
+    left: 0;
+    font-weight: bold;
+  }

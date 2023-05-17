@@ -1,9 +1,10 @@
-
-
-<div style="width: 500px; height: 200px; margin: 0 auto">
-    <app-slider [slides]="slides"></app-slider>
-  </div>
+<app-header></app-header>
+<h1>Welcome Back!</h1>
+<h2>All Available Restaurants</h2>
   <br>
+  <div>
+  <h3>Filter By:</h3>   
+</div>
   <br>
   <div>
     <button class="btn"  (click)="fliterAsian()">Asian</button>
@@ -12,6 +13,7 @@
     <button class="btn"(click)="fliterChicken()">Fried Chicken</button>
      <button class="btn"(click)="fliterBurger()">Burger</button>
     <button class="btn"(click)="fliterPizza()">Pizza</button>
+    
   </div>
   
 <ul>

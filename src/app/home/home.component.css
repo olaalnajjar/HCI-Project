@@ -6,6 +6,18 @@ ul{
     list-style-type: none;
     padding: 0;
 }
+h1{
+    margin-left: 2%;
+    color: #F4721C;
+    text-transform: uppercase;
+    font-weight:bolder;
+}
+h2{
+    margin-left: 2%;
+    color: #F4721C;
+    text-transform: uppercase;
+    font-weight:bolder;
+}
 .btn {
     cursor: pointer;
     border: 1px solid #FF6B00;

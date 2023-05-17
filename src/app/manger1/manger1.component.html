@@ -1,0 +1,12 @@
+<app-header></app-header>
+<div style="width: 500px; height: 200px; margin: 0 auto">
+    <app-slider [slides]="slides"></app-slider>
+  </div>
+  <br>
+  <br>
+  <div class="buttonDiv">  
+    <button class="btn" (click)="showComponentA = true; showComponentB = false;">Customer Orders</button>
+    <button class="btn" (click)="showComponentA = false; showComponentB = true;">Customers</button>
+</div>
+<app-oders *ngIf="showComponentA"></app-oders> 
+<app-users *ngIf="showComponentB"></app-users>

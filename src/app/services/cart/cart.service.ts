@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Cart } from 'src/app/shared/Models/Cart';
 import { CartItem } from 'src/app/shared/Models/CartItem';
@@ -7,7 +8,7 @@ import { Food } from 'src/app/shared/Models/Food';
   providedIn: 'root'
 })
 export class CartService {
-
+  constructor(private http: HttpClient) { }
   private cart:Cart = new Cart();
   
   addToCart(food: Food):void{
@@ -17,6 +18,14 @@ export class CartService {
       return;
     }
     this.cart.items.push(new CartItem(food));
+    this.http.post(`https://hci-project-e4f9b-default-rtdb.firebaseio.com/Orders/ ${this.storeName}.json` ,JSON.stringify(food.dish_name)).subscribe(
+      (response) => {
+        console.log('Data added successfully:', response);
+      },
+      (error) => {
+        console.error('Error occurred:', error);
+      }
+    );
   }
 
   removeFromCart(food_name:string): void{
@@ -33,4 +42,7 @@ export class CartService {
   getCart():Cart{
     return this.cart;
   }
+  storeName!:string
+  setTittleName(title:string){
+    this.storeName=title}
 }

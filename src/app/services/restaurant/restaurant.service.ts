@@ -18,7 +18,7 @@ export class RestaurantService {
 
   addMenuCategory(inputData:string){
     console.log(inputData);
-    this.http.post('https://hci-project-32b58-default-rtdb.firebaseio.com/Restaurants/restaurant1/Categories/Category1.json', inputData).subscribe(
+    this.http.post('https://hci-project-32b58-default-rtdb.firebaseio.com/Restaurants/restaurant1/Categories/Category1.json', JSON.stringify(inputData)).subscribe(
       (response) => {
         console.log('Data added successfully:', response);
       },

@@ -5,5 +5,5 @@ export class Store{
     title!:string;
     stars:number = 0;
     img_id!:string;
-    Tags?:String[];
+    Tags!:String;
 }

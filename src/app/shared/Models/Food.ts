@@ -3,6 +3,6 @@ export class Food{
     Price!:number;
     Image!:string;
     Description!:string
-    Status?:string = "no";
+    Status!:string;
 
 }

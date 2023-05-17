@@ -6,6 +6,16 @@ ul{
     list-style-type: none;
     padding: 0;
 }
+.btn {
+    cursor: pointer;
+    border: 1px solid #FF6B00;
+    background-color: transparent;
+    height: 50px;
+    width: 223px;
+    color: #FF6B00;
+    font-size: 1.5em;
+    box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+}
 
 ul li a{
     height: 25.5rem;

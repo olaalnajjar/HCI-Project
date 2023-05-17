@@ -1,21 +1,21 @@
 <ul>
-    <li *ngFor ="let food of foods">
+    <li *ngFor ="let dish of dishes">
         <div class="food">
-            <img src="{{food.Image}}" alt="food.dish_name">
+            <img src="{{dish.Image}}" alt="dish.dish_name">
             <div class="content">
                 <div class="name">
-                    {{food.dish_name}}
+                    {{dish.dish_name}}
                 </div>
             <div>
-                {{food.Description}}
+                {{dish.Description}}
             </div>
                 <div class="price">
                     <span>
-                        Average Price Range: {{food.Price}} L.E.
+                        Average Price Range: {{dish.Price}} L.E.
                     </span>
-                    <img class="Status" src="{{food.Status}}" alt="food.dish_name">
+                    <img class="Status" src="{{dish.Status}}" alt="dish.dish_name">
                 </div>
-                <button (click)="addToCart(food.dish_name)">Add To Cart</button>
+                <button (click)="addToCart(dish.dish_name, dish.Price, dish.Image, dish.Description, dish.Status)">Add To Cart</button>
             </div>
         </div>
     </li>

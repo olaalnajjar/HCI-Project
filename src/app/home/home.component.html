@@ -3,9 +3,20 @@
 <div style="width: 500px; height: 200px; margin: 0 auto">
     <app-slider [slides]="slides"></app-slider>
   </div>
+  <br>
+  <br>
+  <div>
+    <button class="btn"  (click)="fliterChinese()">Chinese</button>
+    <button class="btn" (click)="fliterCrepe()">Crepe</button>
+    <button class="btn" (click)="fliterOriental()">Oriental</button>
+    <button class="btn"(click)="fliterChicken()">Fried Chicken</button>
+     <button class="btn"(click)="fliterBurger()">Burger</button>
+    <button class="btn"(click)="fliterPizza()">Pizza</button>
+  </div>
+  
 <ul>
     <li *ngFor ="let store of stores">
-        <a routerLink="/store/{{store.id}}">
+        <a  (click)="titleName(store.title)" routerLink="/store/{{store.id}}">
             <img src="{{store.img_id}}" alt="">
             <div class="content">
                 <div class="name">

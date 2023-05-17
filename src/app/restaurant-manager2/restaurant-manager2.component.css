@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Braah+One');
+*{
+    font-family: 'Braah One', sans-serif;
+    border-radius: 4px;
+    margin: 5px;
+    align-items: center;
+}
 div{
     margin-left: 40px;
     margin-right: 40px;

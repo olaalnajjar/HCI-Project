@@ -20,6 +20,7 @@ import { StoresService } from './services/stores/stores.service';
 import { FoodService } from './services/food/food.service';
 import { CartService } from './services/cart/cart.service';
 import{HttpClientModule} from '@angular/common/http'
+import { RestaurantService } from './services/restaurant/restaurant.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import{HttpClientModule} from '@angular/common/http'
   ],
   providers: [StoresService,
     FoodService,
-    CartService],
+    CartService,
+    RestaurantService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

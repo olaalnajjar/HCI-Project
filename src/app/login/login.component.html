@@ -1,0 +1,14 @@
+<form (ngSubmit)="onSubmit(email.value, password.value)">
+    <p>Login</p>
+    <div class="email-class">
+      <input placeholder="Email" type="email" name="email"></div>
+  
+    <div class="password-class">
+      <input placeholder="Password" type="password" name="password"></div>
+  
+      <button class="login-button" data-test="btn-login">Login</button>
+      
+      <div class="no-account">
+        <span>Don't have an account?</span>
+        <a routerLink="/new-account">Create an account</a></div>
+  </form>

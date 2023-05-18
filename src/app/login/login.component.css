@@ -1,0 +1,81 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: DMSans, GEDinarOne;
+    font-weight: 400;
+    outline: none !important;
+  }
+  
+  p {
+    margin: 0px 0px 10px;
+    text-align: center!important;
+    font-size: 32px;
+    font-weight: 500 !important;
+    margin-bottom: 30px;
+  }
+  
+  .email-class {
+    margin-left: 550px;
+    position: relative;
+    padding: 6px 0px;
+    height: 34px;
+    border-bottom: 1px solid rgb(224, 224, 224) !important;
+    width: 100%!important;
+    border: 0!important;
+    margin-bottom: 20px;
+  }
+  
+  .password-class{
+    margin-left: 550px;
+    padding-inline-end: 45px;
+    padding-top: 10px;
+    width: 100%!important;
+    border: 0!important;
+    padding-inline-end: 45px;
+    margin-bottom: 20px;
+  }
+
+  input {
+    width: 400px;
+  }
+    
+  button, input {
+    overflow: visible;
+  }
+  
+  button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+  }
+  
+  .login-button{
+    background-color: rgb(255, 90, 0);
+    color: rgb(255, 255, 255);
+    line-height: 1.25;
+    width: 400px;
+    box-shadow: none;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px !important;
+    margin-bottom: 20px;
+    margin-top: 15px !important;
+    margin-left: 550px;
+    font-size: 16px;
+  }
+  .login-button:disabled {
+    opacity: 0.65;
+  }
+  
+  .no-account{
+    text-align: center!important;
+    padding-bottom: 15px;
+  }
+  
+  .new-account{
+    color: rgb(255, 90, 0);
+    font-size: 14px;
+  }
+  

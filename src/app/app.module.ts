@@ -23,6 +23,12 @@ import{HttpClientModule} from '@angular/common/http'
 import { SliderComponent } from './slider/slider.component';
 import {NgImageSliderModule } from 'ng-image-slider';
 import { UsersComponent } from './users/users.component';
+import { LoginComponent } from './login/login.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { AuthService } from './services/authentication/auth.service';
+import { AuthGuard } from './services/authentication/auth.guard';
+import { FirebaseService } from './services/firebase/firebase.service';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +41,9 @@ import { UsersComponent } from './users/users.component';
     StorePageComponent,
     FoodPageComponent,
     SliderComponent,
-    UsersComponent
+    UsersComponent,
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +57,10 @@ import { UsersComponent } from './users/users.component';
   ],
   providers: [StoresService,
     FoodService,
-    CartService],
+    CartService,
+    AuthService,
+    AuthGuard,
+    FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

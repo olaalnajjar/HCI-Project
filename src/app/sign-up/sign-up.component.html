@@ -1,0 +1,38 @@
+<form (ngSubmit)="onSubmit(username.value, confirmPassword.value)">
+    <p>Create an Account</p>
+    <div>
+        <label>First Name</label>
+        <div >
+            <input type="text" name="firstName">
+        </div>
+    </div>
+    <div>
+        <label>Last Name</label>
+        <div>
+            <input type="text" name="lastName">
+        </div>
+    </div>
+    <div>
+        <label>Email</label>
+        <div>
+            <input type="text" name="username" autocomplete="username">
+        </div>
+    </div>
+    <div>
+        <label>Password</label>
+        <div>
+            <input type="password" autocomplete="current-password" name="Password">
+        </div>
+    </div>
+    <div>
+        <label>Confirm Password</label>
+        <div>
+            <input type="password" autocomplete="current-password" name="confirmPassword">
+        </div>
+    </div>
+    <button class="sign-up-button" data-test="btn-login">Create Your Account</button>
+      
+    <div class="have-account">
+      <span>Already have an account?</span>
+      <a routerLink="/login">Login</a></div>
+</form>

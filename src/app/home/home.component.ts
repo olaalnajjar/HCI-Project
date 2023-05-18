@@ -44,7 +44,7 @@ public currentStoreId!:number;
     if (this.selectedTag) {
       this.StoreService.getStoresByTag(this.selectedTag).subscribe(
         stores => {
-          this.stores = stores;
+          this.stores = Object.values(stores);
         },
         error => {
           console.log('Error:', error);
@@ -53,7 +53,7 @@ public currentStoreId!:number;
     } else {
       this.StoreService.getStores().subscribe(
         stores => {
-          this.stores = stores;
+          this.stores = Object.values(stores);
         },
         error => {
           console.log('Error:', error);

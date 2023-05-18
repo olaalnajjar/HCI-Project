@@ -8,24 +8,31 @@ import { Restaurant2Service } from '../services/restaurant2/restaurant2.service'
   styleUrls: ['./restaurant-manager2.component.css']
 })
 export class RestaurantManager2Component {
-  deliveryFee: number = 0.0;
+  deliveryFee = "0.0";
   deliveryCities: string[] = [];
-  cookingTime: number = 30;
-  cuisineType: string = '';
+  cookingTime="30";
+  cuisineType= '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private restaurant2Service: Restaurant2Service) {}
+
+  data:any;
 
   ngOnInit() {
-    this.getDeliverySettings();
+    this.getDataFromService();
   }
 
-  getDeliverySettings() {
-    this.http.get<any>('https://hci-project-32b58-default-rtdb.firebaseio.com/Users/user1/Type.json').subscribe(
+
+  getDataFromService(){
+    this.restaurant2Service.getAllSettings().subscribe(
       (response) => {
-        this.deliveryFee = response.deliveryFee || 0.0;
-        this.deliveryCities = response.deliveryCities || [];
-        this.cookingTime = response.cookingTime || 30;
-        this.cuisineType = response.cuisineType || '';
+        this.data = response;
+        console.log('Received data:', this.data);
+        this.data = response;
+        this.cookingTime = this.data['Cooking Time'];
+        this.cuisineType = this.data['Cuisine Type'];
+        this.deliveryCities = this.data['Delivery Cities'];
+        this.deliveryFee = this.data['Delivery Fees'];
+
       },
       (error) => {
         console.error('Error occurred:', error);
@@ -33,13 +40,9 @@ export class RestaurantManager2Component {
     );
   }
 
-  saveDeliverySettings() {
-    const settings = {
-      deliveryFee: this.deliveryFee,
-      deliveryCities: this.deliveryCities,
-      cookingTime: this.cookingTime,
-      cuisineType: this.cuisineType
-    };
+  changeDeliveryFee(){
+    this.restaurant2Service.changeDeliveryFee(this.deliveryFee);
   }
+
 
 }

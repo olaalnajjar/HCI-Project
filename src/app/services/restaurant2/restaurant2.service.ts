@@ -20,4 +20,8 @@ export class Restaurant2Service {
       }
     );
   }
+
+  getAllSettings(): Observable<any> {
+    return this.http.get<any>("https://hci-project-32b58-default-rtdb.firebaseio.com/Restaurants/restaurant1/Settings.json");
+  }
 }

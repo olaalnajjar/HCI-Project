@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Restaurant2Service } from '../services/restaurant2/restaurant2.service';
 
@@ -7,11 +8,37 @@ import { Restaurant2Service } from '../services/restaurant2/restaurant2.service'
   styleUrls: ['./restaurant-manager2.component.css']
 })
 export class RestaurantManager2Component {
+  deliveryFee: number = 0.0;
+  deliveryCities: string[] = [];
+  cookingTime: number = 30;
+  cuisineType: string = '';
 
-  constructor(private restaurantService2: Restaurant2Service) {}
+  constructor(private http: HttpClient) {}
 
-  updateDeliveryFees(price:string){
-    this.restaurantService2.changeDeliveryFee(price);
+  ngOnInit() {
+    this.getDeliverySettings();
   }
+
+  getDeliverySettings() {
+    this.http.get<any>('https://hci-project-32b58-default-rtdb.firebaseio.com/Users/user1/Type.json').subscribe(
+      (response) => {
+        this.deliveryFee = response.deliveryFee || 0.0;
+        this.deliveryCities = response.deliveryCities || [];
+        this.cookingTime = response.cookingTime || 30;
+        this.cuisineType = response.cuisineType || '';
+      },
+      (error) => {
+        console.error('Error occurred:', error);
+      }
+    );
+  }
+
+  saveDeliverySettings() {
+    const settings = {
+      deliveryFee: this.deliveryFee,
+      deliveryCities: this.deliveryCities,
+      cookingTime: this.cookingTime,
+      cuisineType: this.cuisineType
+    };
 
 }

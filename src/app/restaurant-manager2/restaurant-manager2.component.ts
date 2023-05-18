@@ -40,5 +40,6 @@ export class RestaurantManager2Component {
       cookingTime: this.cookingTime,
       cuisineType: this.cuisineType
     };
+  }
 
 }

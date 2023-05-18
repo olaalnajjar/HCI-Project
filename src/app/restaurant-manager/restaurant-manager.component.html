@@ -12,7 +12,7 @@
     <button type="submit" (click)="onAddItem()">Add Item</button>
     <label>to {{selectedCategory}}</label>
     <ul *ngFor="let value of items">
-      <li>{{ value }}</li>
+      <li>{{ value }}<button (click)="onDeleteItem(value)">Delete Item</button></li>
     </ul>
     
   </div>

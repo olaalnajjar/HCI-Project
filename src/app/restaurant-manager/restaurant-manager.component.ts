@@ -57,4 +57,8 @@ export class RestaurantManagerComponent {
     );
   }
 
+
+  onDeleteItem(item:string){
+    this.restaurantService.deleteItem(item,this.selectedCategory);
+  }
 }

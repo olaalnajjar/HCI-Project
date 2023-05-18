@@ -19,10 +19,10 @@ export class RestaurantService {
 
   addMenuCategory(category: string) {
     console.log(category);
-    const data={
-    name:category
+    const data = {
+      name: category
     };
-    this.http.put('https://hci-project-32b58-default-rtdb.firebaseio.com/Restaurants/restaurant1/Categories/'+category+'.json', data).subscribe(
+    this.http.put('https://hci-project-32b58-default-rtdb.firebaseio.com/Restaurants/restaurant1/Categories/' + category + '.json', data).subscribe(
       (response) => {
         console.log('Data added successfully:', response);
       },
@@ -33,12 +33,12 @@ export class RestaurantService {
 
   }
 
-  addCategoryItems(item: string, category:string) {
+  addCategoryItems(item: string, category: string) {
     console.log(item);
-    const data={
-      name:item
-      };
-    this.http.put('https://hci-project-32b58-default-rtdb.firebaseio.com/Restaurants/restaurant1/Categories/'+category+'/Dishes/'+item+'.json', data).subscribe(
+    const data = {
+      name: item
+    };
+    this.http.put('https://hci-project-32b58-default-rtdb.firebaseio.com/Restaurants/restaurant1/Categories/' + category + '/Dishes/' + item + '.json', data).subscribe(
       (response) => {
         console.log('Data added successfully:', response);
       },
@@ -49,17 +49,29 @@ export class RestaurantService {
 
   }
 
-  getRestaurantCategories(): Observable<any[]>{
+  getRestaurantCategories(): Observable<any[]> {
     const firebaseUrl = 'https://hci-project-32b58-default-rtdb.firebaseio.com/Restaurants/restaurant1/Categories.json';
 
     return this.http.get<any[]>(firebaseUrl);
   }
 
-  getCategoryItems(category:string): Observable<any[]>{
-    const firebaseUrl = 'https://hci-project-32b58-default-rtdb.firebaseio.com/Restaurants/restaurant1/Categories/'+category+'/Dishes.json';
+  getCategoryItems(category: string): Observable<any[]> {
+    const firebaseUrl = 'https://hci-project-32b58-default-rtdb.firebaseio.com/Restaurants/restaurant1/Categories/' + category + '/Dishes.json';
 
     return this.http.get<any[]>(firebaseUrl);
   }
-  
+
+  deleteItem(item:string, category:string) {
+    const firebaseUrl = 'https://hci-project-32b58-default-rtdb.firebaseio.com/Restaurants/restaurant1/Categories/' + category + '/Dishes/'+item+'.json';
+
+    this.http.delete(firebaseUrl).subscribe(
+      (response) => {
+        console.log('Node deleted:', response);
+      },
+      (error) => {
+        console.error('Error occurred:', error);
+      }
+    );
+  }
 
 }

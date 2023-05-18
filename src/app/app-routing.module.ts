@@ -7,7 +7,8 @@ import { Manger1Component } from './manger1/manger1.component';
 const routes: Routes = [
   {path:'',component: HomeComponent},
   {path: 'store/:id', component:StorePageComponent},
-  {path:'cart-page', component: CartPageComponent}
+  {path:'cart-page', component: CartPageComponent},
+  {path:'orders', component: Manger1Component}
 ];
 
 @NgModule({

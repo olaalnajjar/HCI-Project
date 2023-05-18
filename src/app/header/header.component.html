@@ -1,7 +1,7 @@
 <header>
     <div class="header-container">
       <div class="logo">
-        <img src="../../assets/Images/logo.png" alt="System Name">
+        <a routerLink="/"><img src="../../assets/Images/fried-chicken.png" alt="System Name"></a>
         <h1><a routerLink="/">Btoo3 El Akl</a></h1>
       </div>
       <div class="search-bar">
@@ -11,7 +11,13 @@
       <nav>
         <ul>
           <li><a routerLink="/">Home</a></li>
-          <li><a routerLink="/">Restaurants</a></li>
+          <li *ngIf="checkIsManager()" (mouseenter)="showMenu()" (mouseleave)="hideMenu()">
+            <a>Manager</a>
+            <ul class="dropdown-menu" *ngIf="isMenuVisible" (mouseenter)="showMenu()" (mouseleave)="hideMenu()">
+              <li><a routerLink="/restaurant-manager">Menu Settings</a></li>
+              <li><a routerLink="/restaurant-manager2">Restaurant Settings</a></li>
+            </ul>
+          </li>
           <li><a routerLink="/orders">Orders</a></li>
           <li><a routerLink="/account">Account</a></li>
           <li><a routerLink="/cart-page"><img src="../../assets/Images/shopping-cart.png" height="25px"></a></li>

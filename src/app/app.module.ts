@@ -20,6 +20,8 @@ import { StoresService } from './services/stores/stores.service';
 import { FoodService } from './services/food/food.service';
 import { CartService } from './services/cart/cart.service';
 import{HttpClientModule} from '@angular/common/http'
+import { RestaurantService } from './services/restaurant/restaurant.service';
+import { Restaurant2Service } from './services/restaurant2/restaurant2.service';
 import { SliderComponent } from './slider/slider.component';
 import {NgImageSliderModule } from 'ng-image-slider';
 import { UsersComponent } from './users/users.component';
@@ -54,18 +56,7 @@ import { OdersComponent } from './orders/oders.component';
   providers: [StoresService,
     FoodService,
     CartService],
-  bootstrap: [AppComponent,
-    HeaderComponent,
-    RestaurantManagerComponent,
-    RestaurantManager2Component,
-    CartPageComponent,
-    HomeComponent,
-    StorePageComponent,
-    FoodPageComponent,
-    SliderComponent,
-    UsersComponent,
-    Manger1Component,
-    OdersComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
 

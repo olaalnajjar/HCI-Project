@@ -1,17 +1,18 @@
 <div class="restaurant-manager">
     <h1>Edit Your Restaurant's Menu</h1>
     <h2>Menu Categories</h2>
-    <input type="text" placeholder="Category Name">
-    <button type="submit">Add Category</button>
-    <ul>
-      <li><button>Category Item</button></li>
+    <input type="text" placeholder="Category Name" [(ngModel)]="addedCategory">
+    <button type="submit" (click)="onAddCategory()">Add Category</button>
+    <ul *ngFor="let value of categories">
+      <li><a (click)="categoryClicked(value)">{{ value }}</a></li>
     </ul>
   
     <h2>Menu Items</h2>
-    <input type="text" placeholder="Item Name">
-    <button type="submit">Add Item</button>
-    <ul>
-      <li>item name</li>
+    <input type="text" placeholder="Item Name" [(ngModel)]="addedItem">
+    <button type="submit" (click)="onAddItem()">Add Item</button>
+    <label>to {{selectedCategory}}</label>
+    <ul *ngFor="let value of items">
+      <li>{{ value }}<button (click)="onDeleteItem(value)">Delete Item</button></li>
     </ul>
     
   </div>

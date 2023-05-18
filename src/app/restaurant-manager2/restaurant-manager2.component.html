@@ -3,11 +3,14 @@
     <form>
         <div>
             <label for="deliveryFee"><b>Delivery Fee (EGP):</b></label>
-            <input type="number" id="deliveryFee" name="deliveryFee" value="0.0">
+            <input type="number" id="deliveryFee" name="deliveryFee" value="0.0" [(ngModel)]="deliveryFee">
+            <button (click)="changeDeliveryFee()">Update Delivery Fees</button>
         </div>
 
         <div class="cities">
-            <label for="deliveryCities"><b>Delivery Cities:</b></label><br>
+            <label for="deliveryCities"><b>Delivery Cities:</b></label>
+            <button>Update Delivery Cities</button>
+            <br>
 
             <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
             <label> City 1</label><br>
@@ -22,12 +25,14 @@
 
         <div>
             <label for="cookingTime"><b>Cooking Time (minutes):</b></label>
-            <input type="number" id="cookingTime" name="cookingTime" value="30">
+            <input type="number" id="cookingTime" name="cookingTime" value="30" [(ngModel)]="cookingTime">
+            <button>Update Cooking Time</button>
         </div>
 
         <div>
-            <label for="cuisineType"><b>Cuisine Type:</b></label>
-            <input type="text" id="cuisineType" name="cuisineType">
+            <label for="cuisineType" ><b>Cuisine Type:</b></label>
+            <input type="text" id="cuisineType" name="cuisineType" [(ngModel)]="cuisineType">
+            <button>Update Cuisine Type</button>
         </div>
     </form>
 

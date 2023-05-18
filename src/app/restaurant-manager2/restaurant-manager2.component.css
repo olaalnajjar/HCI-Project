@@ -4,6 +4,7 @@
     border-radius: 4px;
     margin: 5px;
     align-items: center;
+    border-width: 1px;
 }
 div{
     margin-left: 40px;
@@ -24,4 +25,10 @@ select {
 .cities input{
     width: auto;
     margin: 0px;
+}
+
+button {
+    background-color: #999;
+    color: #fff;
+    padding: 5px;
 }

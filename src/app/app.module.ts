@@ -21,6 +21,7 @@ import { FoodService } from './services/food/food.service';
 import { CartService } from './services/cart/cart.service';
 import{HttpClientModule} from '@angular/common/http'
 import { RestaurantService } from './services/restaurant/restaurant.service';
+import { Restaurant2Service } from './services/restaurant2/restaurant2.service';
 
 @NgModule({
   declarations: [

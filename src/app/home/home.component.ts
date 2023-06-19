@@ -62,6 +62,13 @@ public currentStoreId!:number;
     }
   }
 
+  clearFilter(){
+    this.StoreService.getStores().subscribe(
+      stores=>{
+        this.stores= Object.values(stores);
+      }
+    )
+  }
   onTagChange(tag: string): void {
     this.selectedTag = tag;
     this.filterStores();
